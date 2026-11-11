@@ -18,17 +18,17 @@ services:
     ## Use the host's X11 server for GUI applications. This is required for ROS 2 GUI applications
     ## to work properly in a devcontainer (e.g. RViz, rqt, ...).
     ## Option for generic GPU:
-    # devices:
-    #  - "/dev/dri:/dev/dri"
+    devices:
+     - "/dev/dri:/dev/dri"
     ## Option for NVidia GPU (default). Requires the NVIDIA driver and NVIDIA Container Toolkit on
     ## the host, otherwise comment this out and use the generic GPU option above.
-    deploy:
-      resources:
-        reservations:
-          devices:
-          - driver: nvidia
-            count: all
-            capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #       - driver: nvidia
+    #         count: all
+    #         capabilities: [gpu]
     ## Priviledged mode for root access to some devices (e.g. ethercat).
     ## DANGEROUS: This gives the container full access to the host system.
     ## Use with caution.
