@@ -57,6 +57,7 @@ services:
     environment:
       - DISPLAY=${DISPLAY} # Use the host's X11 server for GUI applications
       - QT_X11_NO_MITSHM=1 # Workaround for Qt applications to work properly in a devcontainer
+      - QT_QPA_PLATFORM=xcb # Force Qt to use the X11 backend
       - GIT_COMMITTER_NAME=${GIT_COMMITTER_NAME} # git credentials (optional)
       - GIT_COMMITTER_EMAIL=${GIT_COMMITTER_EMAIL} # git credentials (optional)
       - GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME} # git credentials (optional)
