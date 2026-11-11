@@ -18,9 +18,9 @@ RUN apt-get update \
 
 # Example ROS dependencies
 RUN apt-get update && apt-get install -y \
-        ros-jazzy-rviz2 \
-        ros-jazzy-rviz-common\
-        ros-jazzy-rviz-default-plugins \
+        ros-${ROS_DISTRO}-rviz2 \
+        ros-${ROS_DISTRO}-rviz-common\
+        ros-${ROS_DISTRO}-rviz-default-plugins \
     && rm -rf /var/lib/apt/lists/*
 
 # Add user extras script to the image.
